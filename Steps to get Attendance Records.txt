@@ -1,0 +1,44 @@
+
+Get Web-URL via teams or Get From Powershell 
+
+https://teams.microsoft.com/l/meetup-join/19%3ameeting_MGIyMTliZmMtYWYwZC00MmM5LWE4NjAtODkzNjNkYTEyOTRi%40thread.v2/0?context=%7b%22Tid%22%3a%2222ee08ca-64e4-4a31-808d-9dc6b9e35882%22%2c%22Oid%22%3a%229ef46f83-14ce-4267-bbc9-46567e25a25f%22%7d
+
+
+Get Meeting-ID: 
+
+Using Graph Explorer:
+https://graph.microsoft.com/v1.0/me/onlineMeetings?$filter=JoinWebUrl eq 'https://teams.microsoft.com/l/meetup-join/19%3ameeting_MGIyMTliZmMtYWYwZC00MmM5LWE4NjAtODkzNjNkYTEyOTRi%40thread.v2/0?context=%7b%22Tid%22%3a%2222ee08ca-64e4-4a31-808d-9dc6b9e35882%22%2c%22Oid%22%3a%229ef46f83-14ce-4267-bbc9-46567e25a25f%22%7d'
+
+MSo5ZWY0NmY4My0xNGNlLTQyNjctYmJjOS00NjU2N2UyNWEyNWYqMCoqMTk6bWVldGluZ19NR0l5TVRsaVptTXRZV1l3WkMwME1tTTVMV0U0TmpBdE9Ea3pOak5rWVRFeU9UUmlAdGhyZWFkLnYy
+
+
+or using PowerShell:  
+it will Encode Base64 string 
+
+To fetch Meeting Details using Graph URL 
+GET /me/onlineMeetings/{meetingId}
+
+https://graph.microsoft.com/v1.0/me/onlineMeetings/MSo5ZWY0NmY4My0xNGNlLTQyNjctYmJjOS00NjU2N2UyNWEyNWYqMCoqMTk6bWVldGluZ19NR0l5TVRsaVptTXRZV1l3WkMwME1tTTVMV0U0TmpBdE9Ea3pOak5rWVRFeU9UUmlAdGhyZWFkLnYy
+
+To get attendance Report (ID) using Graph URL
+GET /me/onlineMeetings/{meetingId}/attendanceReports
+
+https://graph.microsoft.com/v1.0/me/onlineMeetings/MSo5ZWY0NmY4My0xNGNlLTQyNjctYmJjOS00NjU2N2UyNWEyNWYqMCoqMTk6bWVldGluZ19NR0l5TVRsaVptTXRZV1l3WkMwME1tTTVMV0U0TmpBdE9Ea3pOak5rWVRFeU9UUmlAdGhyZWFkLnYy/attendanceReports
+
+a7e97fd1-e0e8-4550-ac1c-afd5cdd41fd0
+
+To get attendance records 
+GET /me/onlineMeetings/{meetingId}/attendanceReports/{reportId}/attendanceRecords
+
+https://graph.microsoft.com/v1.0/me/onlineMeetings/MSo5ZWY0NmY4My0xNGNlLTQyNjctYmJjOS00NjU2N2UyNWEyNWYqMCoqMTk6bWVldGluZ19NR0l5TVRsaVptTXRZV1l3WkMwME1tTTVMV0U0TmpBdE9Ea3pOak5rWVRFeU9UUmlAdGhyZWFkLnYy/attendanceReports/a7e97fd1-e0e8-4550-ac1c-afd5cdd41fd0/attendanceRecords
+
+"id": "9ef46f83-14ce-4267-bbc9-46567e25a25f",
+            "emailAddress": "intervaluser@M365x39618365.onmicrosoft.com",
+            "totalAttendanceInSeconds": 496,
+            "role": "Organizer",
+            "identity": {
+                "@odata.type": "#microsoft.graph.communicationsUserIdentity",
+                "id": "9ef46f83-14ce-4267-bbc9-46567e25a25f",
+                "displayName": "intervaluser",
+                "tenantId": "22ee08ca-64e4-4a31-808d-9dc6b9e35882"
+            },
